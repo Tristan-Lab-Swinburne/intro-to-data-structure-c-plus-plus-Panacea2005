@@ -6,11 +6,11 @@
 #include <cmath>
 #include <iomanip>
 
-#define P1
-#define P2
+//#define P1
+//#define P2
 #define Automate
-#define P3
-#define P4
+//#define P3
+//#define P4
 
 using namespace std;
 
