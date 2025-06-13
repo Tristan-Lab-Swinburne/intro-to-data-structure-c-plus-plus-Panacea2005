@@ -38,17 +38,11 @@ const int IntVector::get(size_t aIndex) const
 // swap two elements within the vector
 void IntVector::swap(size_t aSourceIndex, size_t aTargetIndex)
 {
-    // Check if both indices are within range
-    if (aSourceIndex >= fNumberOfElements)
+    if (aSourceIndex >= fNumberOfElements || aTargetIndex >= fNumberOfElements)
     {
-        throw std::out_of_range("Illegal vector index");
+        throw std::out_of_range("Illegal vector indices");
     }
-    if (aTargetIndex >= fNumberOfElements)
-    {
-        throw std::out_of_range("Illegal vector index");
-    }
-    
-    // Swap the elements
+
     int temp = fElements[aSourceIndex];
     fElements[aSourceIndex] = fElements[aTargetIndex];
     fElements[aTargetIndex] = temp;
@@ -57,11 +51,10 @@ void IntVector::swap(size_t aSourceIndex, size_t aTargetIndex)
 // indexer
 const int IntVector::operator[](size_t aIndex) const
 {
-    // Check if index is within range
     if (aIndex >= fNumberOfElements)
     {
         throw std::out_of_range("Illegal vector index");
     }
-    
+
     return fElements[aIndex];
 }
